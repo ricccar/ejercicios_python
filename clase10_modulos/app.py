@@ -15,6 +15,5 @@ if opcion_elegida in menu.opciones:
     elif opcion_elegida == 3:
         tarea_a_eliminar = int (input (f"Introduce el indice de la tarea que quieres eliminar: \n"))
         tareas.eliminar_tarea(tarea_a_eliminar) 
-    # prueba: imprimo las tareas!
-    print(tareas.tareas)
+
         
