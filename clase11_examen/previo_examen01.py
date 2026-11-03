@@ -6,14 +6,16 @@ puntos extra: estos alumnos estudian Python, pero seria genial que el sistema no
 crear alumnos especiales que estudien PHP, Javascript, Java, ...
 """
 
+
 class Alumno:
-    def __init__(self, _id: int,nombre: str, apellidos: str, edad: int, lenguaje: str = "Python" ):
+    def __init__(self, _id: int, nombre: str, apellidos: str, edad: int, lenguaje: str = "Python"):
         self._id = _id
         self.nombre = nombre
         self.apellidos = apellidos
         self.edad = edad
         self.lenguaje = lenguaje  # Permite Python, PHP, Java, etc.
-    
+
+
 class Gestion:
     def __init__(self):
         self.alumnos = {}
@@ -22,37 +24,39 @@ class Gestion:
     def crear_alumno(self):
         print("\n*** CREAR ALUMNO ***")
         nombre = input("Introduce su nombre: ")
-        apellidos = input("Introduce sus apellidos: ") 
+        apellidos = input("Introduce sus apellidos: ")
         while True:
             try:
                 edad = int(input("Edad: "))
                 break
             except ValueError:
                 print("Por favor, introduce un número válido para la edad.")
-                
-        lenguaje_opcion = input("Lenguaje para su matrícula ('Python' si lo deja vacío): ").strip()
+
+        lenguaje_opcion = input(
+            "Lenguaje para su matrícula ('Python' si lo deja vacío): ").strip()
         if lenguaje_opcion:
             lenguaje = lenguaje_opcion
         else:
             lenguaje = "Python"
 
-        nuevo_alumno = Alumno(self.contador_id, nombre, apellidos, edad, lenguaje)
+        nuevo_alumno = Alumno(self.contador_id, nombre,
+                              apellidos, edad, lenguaje)
         self.alumnos[self.contador_id] = nuevo_alumno
         print(f"Alumno creado con éxito! ID: {self.contador_id}")
         self.contador_id += 1
-    
+
     def mostrar_alumnos(self):
         print("\n*** LISTA DE ALUMNOS ***")
         if not self.alumnos:
             print("No hay alumnos registrados en el sistema.")
             return
         for alumno in self.alumnos.values():
-            print(f"ID: {alumno._id} --> Nombre: {alumno.nombre} {alumno.apellidos} Lenguaje: {alumno.lenguaje}")
+            print(
+                f"ID: {alumno._id} --> Nombre: {alumno.nombre} {alumno.apellidos} Lenguaje: {alumno.lenguaje}")
         print("-" * 40)
 
-            
     def eliminar_alumno(self):
-        print("\n--- ELIMINAR ALUMNO ---")
+        print("\n*** ELIMINAR ALUMNO ***")
         try:
             id_alumno = int(input("Introduce el ID del alumno a eliminar: "))
             if id_alumno in self.alumnos:
@@ -70,13 +74,17 @@ class Gestion:
             if id_alumno in self.alumnos:
                 alumno = self.alumnos[id_alumno]
                 print(f"\nModificando a: {alumno.nombre}")
-                
+
                 # Si se deja en blanco, conserva el valor actual
-                nuevo_nombre = input(f"Nuevo nombre [{alumno.nombre}]: ") or alumno.nombre
-                nuevo_apellidos = input(f"Nuevo/s apellido/s [{alumno.apellidos}]: ") or alumno.apellidos               
+                nuevo_nombre = input(
+                    f"Nuevo nombre [{alumno.nombre}]: ") or alumno.nombre
+                nuevo_apellidos = input(
+                    f"Nuevo/s apellido/s [{alumno.apellidos}]: ") or alumno.apellidos
                 nueva_edad_input = input(f"Nueva edad [{alumno.edad}]: ")
-                nueva_edad = int(nueva_edad_input) if nueva_edad_input else alumno.edad
-                nuevo_lenguaje = input(f"Nuevo lenguaje [{alumno.lenguaje}]: ") or alumno.lenguaje
+                nueva_edad = int(
+                    nueva_edad_input) if nueva_edad_input else alumno.edad
+                nuevo_lenguaje = input(
+                    f"Nuevo lenguaje [{alumno.lenguaje}]: ") or alumno.lenguaje
 
                 # Actualizar datos
                 alumno.nombre = nuevo_nombre
@@ -88,11 +96,11 @@ class Gestion:
                 print("Error: No se encontró ningún alumno con ese ID.")
         except ValueError:
             print("Entrada inválida.")
-            
-        
+
+
 def menu():
     sistema = Gestion()
-        
+
     # Alumnos de prueba iniciales
     sistema.alumnos[1] = Alumno(1, "Ana", "Gómez", 23, "Python")
     sistema.alumnos[2] = Alumno(2, "Carlos",  "Pérez", 30, "PHP")
@@ -107,9 +115,9 @@ def menu():
         print("3. Modificar Alumno")
         print("4. Eliminar Alumno")
         print("5. Salir")
-        
+
         opcion = input("Selecciona una opción (1-5): ")
-        
+
         if opcion == "1":
             sistema.crear_alumno()
         elif opcion == "2":
@@ -123,6 +131,6 @@ def menu():
             break
         else:
             print("Opción no válida. Intenta de nuevo.")
-            
-                      
+
+
 menu()
