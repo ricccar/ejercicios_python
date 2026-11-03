@@ -5,24 +5,39 @@ Ademas, el reproductor debería recordar que canciones ha puesto en orden, y deb
 """
 
 class Reproductor:
-    def __init__(self, canciones: list, filtro):
-        self.canciones = canciones
-        self.filtro = filtro
+    def __init__(self):
+        self.historico = []
 
     def reproducir(self, cancion:str, filtro = None):
-        self.historial.append(cancion)
-        self._aplicar_filtro(cancion, filtro)
+        self.historico.append(cancion)
+        cancion = self._aplicar_filtro(cancion, filtro)
         return(f"Iniciando {cancion}")
 
     def cancion_actual(self):
-        return self.cancion_actual[-1]
+        return self.historico[-1]
 
     def cambiar_filtro(self, filtro: None):
         cancion = self._aplicar_filtro(self.cancion_actual(), filtro)
-        return ("fContibnuando {cancion}")
+        return (f"Contibnuando {cancion}")
 
-
+    @staticmethod
     def _aplicar_filtro(cancion, filtro):
         return filtro(cancion) if filtro else cancion
 
-    # Video Sigue en la 1:02
+def solo_epico(cancion: str):
+    return cancion.upper()
+
+def repetir(cancion: str):
+    return ((cancion+" ")*5)
+
+c = "The river"
+c2 = "Moonlight"
+
+repr = Reproductor()
+print(repr.reproducir(c, solo_epico))
+print(repr.historico)
+print(repr.reproducir(c2, repetir))
+print(repr.historico)
+print(repr.cambiar_filtro(solo_epico))
+print(repr.historico)
+
