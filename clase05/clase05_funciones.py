@@ -40,3 +40,10 @@ titulo("American Beauty", filigrana="*")
 titulo("Juarsic Park", filigrana="=", ancho=120)
 titulo("La milla verde", ancho=20)
 
+
+# Función variádica
+
+def sumar(*numeros):        # Función variádica -----> convierte los parámetros en una tupla
+    return sum(numeros)
+
+print (sumar(23, 45, 23, 4, 3, 12))         # Por posición ------> 6 números
