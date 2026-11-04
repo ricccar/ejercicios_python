@@ -21,4 +21,3 @@ def elevar (n1: float, n2: float) -> float:
 def raiz (n1: float, n2: float) -> float:
     return n1 ** (1/n2)
 
-print(raiz(27,3))
