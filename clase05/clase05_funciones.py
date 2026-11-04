@@ -43,7 +43,7 @@ titulo("La milla verde", ancho=20)
 
 # Función variádica
 
-def sumar(*numeros):        # Función variádica -----> convierte los parámetros en una tupla
+def sumar(*numeros):        # Función variádica -----> convierte los parámetros en una tupla por posición (no por clave valor)
     return sum(numeros)
 
 print (sumar(23, 45, 23, 4, 3, 12))         # Por posición ------> 6 números
