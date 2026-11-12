@@ -1,0 +1,13 @@
+pip gestor de paquetes de python
+pip list -> paquetes de python instalados
+pip install pandas -> ejemplo de instalación de paquetes
+pip uninstall pandas -> ejemplo de desinstalación de paquetes
+python.exe -m pip install --upgrade pip -> actualizo pip
+
+pip freeze indica que dependencias tengo instaladas
+pip freeze > requierements.txt -> Crea el archivo txt
+requirements.txt -> lista de requerimientos, para empezar de cero un proyecto
+pip install -r requirements.txt -> Para instalar un entorno de trabajo
+
+pip install --upgrade jupyter -> actalizo jupyter
+pip install pytest==3.1.1 -> Instala la versión deseada
