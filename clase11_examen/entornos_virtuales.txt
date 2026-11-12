@@ -1,0 +1,25 @@
+Crea entorno virtual:
+python -m venv (nombre del entorno)
+python -m venv .venv
+
+Creo un entorno:
+python -m venv mi_venv
+Que crea una carpeta con ese nombre.
+Para usarlo hay que activarlo:
+Windows -> mi_venv\Scripts\activate   Entrar en la carpeta y activar.
+.\activate
+Instalar los paquetes (pip) y generar el requirements (freeze)
+
+Eliminar entorno:
+deactivate salir del entorno
+Eliminamos la carpeta generada con el nombre del entorno virtual
+
+
+Archivos de configuración:
+.env suelen contener variables que no queremos repetir constantemente, claves y rutas.
+Archivos de configuración:
+conexiones, bases de datos.
+
+Los .ini o .cfg se leen con el módulo configparser y los .env con el módulo os o dotenv (requiere instalación del módulo)
+
+Archivos .toml -> Con todos los requerimientos que genera: yubi herramientas que generan estos Archivos
