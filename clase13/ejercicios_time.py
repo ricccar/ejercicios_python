@@ -1,5 +1,8 @@
 from datetime import date
 
+
+
+
 d = date.fromisoformat("20261207")  # año mes y dia
 print(d)
 
