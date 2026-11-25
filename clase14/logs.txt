@@ -1,0 +1,169 @@
+2026-11-25 08:00:01.124 [INFO] [Application] Iniciando aplicación
+2026-11-25 08:00:01.167 [INFO] [Application] Entorno: Production
+2026-11-25 08:00:01.168 [INFO] [Application] Versión: 3.4.2
+2026-11-25 08:00:01.192 [DEBUG] [Configuration] Cargando configuración desde appsettings.json
+2026-11-25 08:00:01.215 [INFO] [Configuration] Configuración cargada correctamente
+2026-11-25 08:00:01.241 [INFO] [Database] Inicializando conexión con base de datos
+2026-11-25 08:00:01.398 [INFO] [Database] Conexión establecida correctamente
+2026-11-25 08:00:01.402 [INFO] [ApiClient] Inicializando cliente HTTP
+2026-11-25 08:00:01.404 [DEBUG] [ApiClient] Timeout configurado: 30 segundos
+2026-11-25 08:00:01.405 [INFO] [Application] Inicialización completada
+
+2026-11-25 08:05:14.210 [INFO] [Authentication] Solicitud de autenticación recibida
+2026-11-25 08:05:14.212 [DEBUG] [Authentication] Validando token de acceso
+2026-11-25 08:05:14.354 [INFO] [Authentication] Token validado correctamente
+2026-11-25 08:05:14.355 [INFO] [Authentication] Usuario autenticado: user01
+2026-11-25 08:05:14.357 [DEBUG] [Authorization] Comprobando permisos del usuario
+2026-11-25 08:05:14.412 [INFO] [Authorization] Usuario autorizado para recurso /api/incidencias
+
+2026-11-25 08:05:14.420 [INFO] [IncidenciasService] Consultando incidencias abiertas
+2026-11-25 08:05:14.421 [DEBUG] [Database] Ejecutando consulta SQL
+2026-11-25 08:05:14.785 [INFO] [Database] Consulta finalizada en 364 ms
+2026-11-25 08:05:14.786 [INFO] [IncidenciasService] Se han recuperado 247 registros
+2026-11-25 08:05:14.790 [DEBUG] [IncidenciasService] Iniciando procesamiento de registros
+2026-11-25 08:05:15.101 [INFO] [IncidenciasService] Procesamiento completado correctamente
+
+2026-11-25 08:12:03.552 [INFO] [ApiClient] GET /api/users/854
+2026-11-25 08:12:04.786 [WARNING] [ApiClient] Tiempo de respuesta elevado: 1234 ms
+2026-11-25 08:12:04.787 [INFO] [ApiClient] HTTP 200 OK
+2026-11-25 08:12:04.790 [INFO] [UserService] Usuario 854 recuperado correctamente
+
+2026-11-25 08:14:22.015 [INFO] [ApiClient] GET /api/departments
+2026-11-25 08:14:27.231 [WARNING] [ApiClient] Tiempo de respuesta elevado: 5216 ms
+2026-11-25 08:14:27.235 [WARNING] [Performance] El servicio externo está respondiendo por encima del umbral de 3000 ms
+2026-11-25 08:14:27.238 [INFO] [ApiClient] HTTP 200 OK
+
+2026-11-25 08:22:17.891 [INFO] [Authentication] Solicitud de autenticación recibida
+2026-11-25 08:22:18.004 [INFO] [Authentication] Usuario autenticado: user02
+2026-11-25 08:22:18.006 [DEBUG] [Authorization] Comprobando permisos para /api/admin
+2026-11-25 08:22:18.043 [WARNING] [Authorization] El usuario no pertenece al rol requerido: Administrator
+2026-11-25 08:22:18.044 [ERROR] [Authorization] Acceso denegado al recurso /api/admin
+2026-11-25 08:22:18.045 [ERROR] [ApiClient] HTTP 403 Forbidden
+
+2026-11-25 08:24:41.610 [INFO] [Authentication] Renovando token de acceso
+2026-11-25 08:24:41.890 [WARNING] [Authentication] El token actual expiró hace 32 segundos
+2026-11-25 08:24:42.012 [INFO] [Authentication] Intentando renovación mediante refresh token
+2026-11-25 08:24:42.329 [INFO] [Authentication] Token renovado correctamente
+
+2026-11-25 08:30:00.001 [INFO] [Scheduler] Iniciando tarea programada ImportUsersJob
+2026-11-25 08:30:00.011 [DEBUG] [ImportUsersJob] Solicitando usuarios al servicio externo
+2026-11-25 08:30:00.015 [INFO] [ApiClient] GET /api/users
+2026-11-25 08:30:30.021 [ERROR] [ApiClient] Timeout esperando respuesta del servidor
+2026-11-25 08:30:30.022 [ERROR] [ApiClient] System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+2026-11-25 08:30:30.023 [WARNING] [ImportUsersJob] Reintentando operación. Intento 2 de 3
+2026-11-25 08:30:32.026 [INFO] [ApiClient] GET /api/users
+2026-11-25 08:30:33.421 [INFO] [ApiClient] HTTP 200 OK
+2026-11-25 08:30:33.423 [INFO] [ImportUsersJob] Recuperados 1258 usuarios
+2026-11-25 08:30:33.425 [DEBUG] [ImportUsersJob] Procesando usuarios
+2026-11-25 08:30:34.786 [WARNING] [ImportUsersJob] Usuario 4285 sin departamento asignado
+2026-11-25 08:30:34.787 [WARNING] [ImportUsersJob] Usuario 4291 sin dirección de correo electrónico
+2026-11-25 08:30:35.125 [INFO] [ImportUsersJob] Procesados 1258 usuarios
+2026-11-25 08:30:35.126 [INFO] [Scheduler] Tarea ImportUsersJob finalizada
+
+2026-11-25 09:02:11.702 [INFO] [Database] Abriendo conexión SQL
+2026-11-25 09:02:11.913 [ERROR] [Database] No se pudo establecer conexión con el servidor
+2026-11-25 09:02:11.914 [ERROR] [Database] Microsoft.Data.SqlClient.SqlException: A network-related or instance-specific error occurred while establishing a connection to SQL Server.
+2026-11-25 09:02:11.915 [DEBUG] [Database] Server=SQLPROD01; Database=ServiceDesk
+2026-11-25 09:02:11.916 [WARNING] [Database] Reintentando conexión en 5 segundos
+2026-11-25 09:02:16.923 [INFO] [Database] Intento de conexión 2 de 3
+2026-11-25 09:02:17.110 [INFO] [Database] Conexión establecida correctamente
+2026-11-25 09:02:17.111 [INFO] [Database] Servicio SQL disponible nuevamente
+
+2026-11-25 09:15:27.331 [INFO] [FileProcessor] Procesando archivo: altas_usuarios.csv
+2026-11-25 09:15:27.336 [DEBUG] [FileProcessor] Tamaño de archivo: 145 KB
+2026-11-25 09:15:27.511 [INFO] [FileProcessor] 352 registros detectados
+2026-11-25 09:15:27.615 [WARNING] [FileProcessor] Línea 47: campo Department vacío
+2026-11-25 09:15:27.616 [WARNING] [FileProcessor] Línea 48: formato de teléfono no válido
+2026-11-25 09:15:27.621 [ERROR] [FileProcessor] Línea 73: formato de fecha incorrecto: "31/15/2026"
+2026-11-25 09:15:27.622 [ERROR] [FileProcessor] System.FormatException: String '31/15/2026' was not recognized as a valid DateTime.
+2026-11-25 09:15:27.623 [WARNING] [FileProcessor] Registro 73 descartado
+2026-11-25 09:15:28.101 [INFO] [FileProcessor] Procesamiento finalizado
+2026-11-25 09:15:28.102 [INFO] [FileProcessor] Importados: 349
+2026-11-25 09:15:28.103 [WARNING] [FileProcessor] Registros descartados: 3
+
+2026-11-25 09:45:12.201 [INFO] [UserService] Creando nuevo usuario
+2026-11-25 09:45:12.205 [DEBUG] [UserService] Validando propiedades obligatorias
+2026-11-25 09:45:12.206 [INFO] [UserService] Validación correcta
+2026-11-25 09:45:12.307 [ERROR] [Database] Error insertando usuario
+2026-11-25 09:45:12.308 [ERROR] [Database] Violation of UNIQUE KEY constraint 'UQ_Users_Email'. Cannot insert duplicate key.
+2026-11-25 09:45:12.309 [WARNING] [UserService] Ya existe un usuario con la misma dirección de correo
+2026-11-25 09:45:12.310 [INFO] [UserService] Operación cancelada sin realizar cambios
+
+2026-11-25 10:03:48.722 [INFO] [ApiClient] POST /api/tickets
+2026-11-25 10:03:48.724 [DEBUG] [ApiClient] Enviando solicitud al servidor
+2026-11-25 10:03:49.020 [ERROR] [ApiClient] HTTP 400 Bad Request
+2026-11-25 10:03:49.021 [ERROR] [ApiClient] Validation failed: field "Description" is required
+2026-11-25 10:03:49.023 [WARNING] [TicketService] No se ha podido crear la incidencia
+
+2026-11-25 10:17:02.411 [INFO] [ApiClient] GET /api/assets/PC-04821
+2026-11-25 10:17:02.952 [ERROR] [ApiClient] HTTP 404 Not Found
+2026-11-25 10:17:02.953 [WARNING] [AssetService] Equipo PC-04821 no encontrado en inventario
+
+2026-11-25 10:32:15.110 [INFO] [ReportService] Generando informe diario
+2026-11-25 10:32:15.332 [DEBUG] [ReportService] Recuperando información de base de datos
+2026-11-25 10:32:16.792 [INFO] [ReportService] 4382 registros recuperados
+2026-11-25 10:32:16.795 [INFO] [ReportService] Generando archivo
+2026-11-25 10:32:17.203 [ERROR] [ReportService] No se puede escribir en el directorio C:\Reports\Daily
+2026-11-25 10:32:17.204 [ERROR] [ReportService] System.UnauthorizedAccessException: Access to the path 'C:\Reports\Daily' is denied.
+2026-11-25 10:32:17.205 [WARNING] [ReportService] Intentando utilizar directorio temporal
+2026-11-25 10:32:17.891 [INFO] [ReportService] Informe generado en directorio temporal
+
+2026-11-25 11:01:45.927 [INFO] [ApiClient] GET /api/configuration
+2026-11-25 11:01:46.002 [ERROR] [ApiClient] HTTP 401 Unauthorized
+2026-11-25 11:01:46.003 [WARNING] [Authentication] Credenciales rechazadas por el servidor
+2026-11-25 11:01:46.005 [INFO] [Authentication] Solicitando nuevo token
+2026-11-25 11:01:46.427 [INFO] [Authentication] Nuevo token obtenido
+2026-11-25 11:01:46.430 [INFO] [ApiClient] Reintentando GET /api/configuration
+2026-11-25 11:01:46.722 [INFO] [ApiClient] HTTP 200 OK
+
+2026-11-25 11:22:34.300 [INFO] [CacheService] Consultando caché
+2026-11-25 11:22:34.701 [WARNING] [CacheService] El servicio de caché no responde
+2026-11-25 11:22:34.702 [WARNING] [CacheService] Continuando sin caché
+2026-11-25 11:22:34.704 [INFO] [Database] Recuperando datos directamente desde SQL Server
+
+2026-11-25 11:47:51.845 [INFO] [NotificationService] Enviando notificación por correo
+2026-11-25 11:47:52.002 [ERROR] [NotificationService] SMTP authentication failed
+2026-11-25 11:47:52.003 [ERROR] [NotificationService] System.Net.Mail.SmtpException: Authentication unsuccessful
+2026-11-25 11:47:52.004 [WARNING] [NotificationService] Notificación no enviada
+2026-11-25 11:47:52.005 [INFO] [NotificationService] Mensaje añadido a la cola de reintentos
+
+2026-11-25 12:04:15.775 [INFO] [MemoryMonitor] Memoria utilizada: 412 MB
+2026-11-25 12:14:15.781 [INFO] [MemoryMonitor] Memoria utilizada: 680 MB
+2026-11-25 12:24:15.790 [WARNING] [MemoryMonitor] Uso elevado de memoria: 1248 MB
+2026-11-25 12:24:15.792 [WARNING] [MemoryMonitor] Umbral recomendado superado
+
+2026-11-25 12:28:41.020 [INFO] [TicketService] Procesando incidencia 92841
+2026-11-25 12:28:41.041 [DEBUG] [TicketService] Estado actual: OPEN
+2026-11-25 12:28:41.045 [DEBUG] [TicketService] Nuevo estado: CLOSED
+2026-11-25 12:28:41.211 [ERROR] [TicketService] NullReferenceException procesando incidencia 92841
+2026-11-25 12:28:41.212 [ERROR] [TicketService] System.NullReferenceException: Object reference not set to an instance of an object.
+2026-11-25 12:28:41.213 [ERROR] [TicketService] at ServiceDesk.Services.TicketService.CloseTicket(Int32 ticketId)
+2026-11-25 12:28:41.214 [ERROR] [TicketService] at ServiceDesk.Controllers.TicketsController.Close(Int32 id)
+2026-11-25 12:28:41.216 [WARNING] [TicketService] Se revierte la transacción
+2026-11-25 12:28:41.330 [INFO] [Database] ROLLBACK completado correctamente
+
+2026-11-25 12:40:00.101 [INFO] [Scheduler] Ejecutando mantenimiento programado
+2026-11-25 12:40:00.301 [INFO] [Database] Eliminando registros temporales
+2026-11-25 12:40:02.632 [INFO] [Database] 829 registros temporales eliminados
+2026-11-25 12:40:02.640 [INFO] [CacheService] Limpiando caché
+2026-11-25 12:40:02.991 [INFO] [CacheService] Caché limpiada correctamente
+2026-11-25 12:40:02.993 [INFO] [Scheduler] Mantenimiento finalizado
+
+2026-11-25 12:55:31.101 [ERROR] [Database] Deadlock detectado durante actualización
+2026-11-25 12:55:31.102 [ERROR] [Database] Transaction (Process ID 84) was deadlocked on lock resources with another process
+2026-11-25 12:55:31.103 [WARNING] [Database] Transacción seleccionada como víctima del deadlock
+2026-11-25 12:55:31.104 [INFO] [Database] Reintentando transacción
+2026-11-25 12:55:31.754 [INFO] [Database] Transacción completada correctamente en el segundo intento
+
+2026-11-25 13:01:04.201 [INFO] [HealthCheck] Ejecutando comprobación del sistema
+2026-11-25 13:01:04.203 [INFO] [HealthCheck] API: OK
+2026-11-25 13:01:04.205 [INFO] [HealthCheck] Database: OK
+2026-11-25 13:01:04.502 [WARNING] [HealthCheck] SMTP: DEGRADED
+2026-11-25 13:01:04.821 [ERROR] [HealthCheck] CacheService: UNAVAILABLE
+2026-11-25 13:01:04.823 [WARNING] [HealthCheck] Estado general del sistema: DEGRADED
+
+2026-11-25 13:05:49.310 [INFO] [Application] Solicitud de apagado recibida
+2026-11-25 13:05:49.312 [INFO] [Scheduler] Deteniendo tareas programadas
+2026-11-25 13:05:49.420 [INFO] [Database] Cerrando conexiones
+2026-11-25 13:05:49.511 [INFO] [Application] Liberando recursos
+2026-11-25 13:05:49.723 [INFO] [Application] Aplicación finalizada correctamente

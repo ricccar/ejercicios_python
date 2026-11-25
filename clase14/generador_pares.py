@@ -32,5 +32,5 @@ class IteradorPares:
 
 
 # Uso con un bucle for
-for par in IteradorPares(limite=20):
+for par in IteradorPares(limite=17):
     print(par)

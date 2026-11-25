@@ -46,6 +46,7 @@ print("Secuencia generada:")
 for numero in generador_decimales(limite_aleatorio):
     print(str(numero) + ",  ")
 
+"""
 # Código de compañero
 notas_dict = {
     "Jose": random.randint(1, 20),
@@ -73,3 +74,4 @@ def generar_numeros_escala(limite):
 
 for numero in generar_numeros_escala(random.randint(1, 5)):
     print(numero)
+"""
